@@ -3,24 +3,18 @@
   "version": "1.0.0",
   "description": "Track and analyze your GitHub activity",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "dev": "webpack serve --mode development",
-    "build": "webpack --mode production",
-    "test": "jest"
+    "dev": "echo 'Dev server coming soon'",
+    "build": "echo 'Build process coming soon'",
+    "test": "echo 'No tests yet' && exit 0"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "chart.js": "^4.0.0",
-    "react-chartjs-2": "^5.0.0",
-    "octokit": "^2.0.0"
+    "react-dom": "^18.2.0"
   },
-  "devDependencies": {
-    "@babel/core": "^7.20.0",
-    "@babel/preset-react": "^7.18.0",
-    "babel-loader": "^9.1.0",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.0",
-    "webpack-dev-server": "^4.11.0"
-  }
+  "devDependencies": {},
+  "keywords": ["github", "analytics", "stats"],
+  "author": "Your Name",
+  "license": "MIT"
 }

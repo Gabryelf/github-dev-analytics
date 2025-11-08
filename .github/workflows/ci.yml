@@ -28,7 +28,7 @@ jobs:
     - name: Build project
       run: npm run build
 
-  deploy:
+  deploy-demo:
     needs: test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
@@ -40,11 +40,33 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '18'
+        cache: 'npm'
     
     - name: Install and build
       run: |
         npm ci
         npm run build
+    
+    - name: Create demo deployment
+      run: |
+        mkdir -p dist
+        echo "<!DOCTYPE html>
+        <html>
+        <head>
+            <title>GitHub Dev Analytics - Coming Soon</title>
+            <style>
+                body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; padding: 2rem; text-align: center; }
+                .container { max-width: 600px; margin: 0 auto; }
+            </style>
+        </head>
+        <body>
+            <div class='container'>
+                <h1>🚀 GitHub Dev Analytics</h1>
+                <p>This application is under development.</p>
+                <p>Follow the progress on <a href='https://github.com/${{ github.repository }}'>GitHub</a></p>
+            </div>
+        </body>
+        </html>" > dist/index.html
     
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3

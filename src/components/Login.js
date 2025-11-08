@@ -2,7 +2,7 @@ import React from 'react';
 
 const Login = ({ onLogin }) => {
   const handleLogin = () => {
-    const clientId = 'ТВОЙ_CLIENT_ID';
+    const clientId = 'Ov23liJs0okbziaqg2tT';
     const redirectUri = encodeURIComponent('http://localhost:3000/auth');
     const scope = encodeURIComponent('repo user read:org');
     
